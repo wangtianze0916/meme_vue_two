@@ -8,7 +8,7 @@ import Download from './icons/download.vue';
     <div class="note_value1">首页</div>
     <div class="note"></div>
     <div class="note_value1">下载生成结果</div>
-    <Download /> <!-- 在这里使用 Download 组件 -->
+    <Download />
     <div class="note_value1">社区</div>
     <div class="note_value1">联系我们</div>
     <div class="note_value2">历史记录</div>

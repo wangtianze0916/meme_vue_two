@@ -1,7 +1,6 @@
 <script setup>
 
 import {inject, ref} from "vue";
-import SelectImg from "@/components/selectImg.vue";
 
 const $http = inject("$axios")
 const $queryString = inject("$qs")
