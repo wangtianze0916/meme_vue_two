@@ -127,7 +127,7 @@ function run() {
   <div>
     <div class="headMain">
 <!--      <input class="promoteIn" type="text" placeholder="Input prompt here!"  >-->
-      <textarea class="promoteIn" placeholder="Input your paper in there" v-model="prompt"></textarea>
+      <textarea class="promoteIn" placeholder="Input your prompt in there" v-model="prompt"></textarea>
       <button class="runI" @click="run">启动</button>
     </div>
     <div class="bottomMain">
