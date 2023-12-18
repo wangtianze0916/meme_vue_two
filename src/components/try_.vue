@@ -127,14 +127,35 @@ function run() {
   <div>
     <div class="headMain">
 <!--      <input class="promoteIn" type="text" placeholder="Input prompt here!"  >-->
-      <textarea class="promoteIn" placeholder="Input prompt here!" v-model="prompt"></textarea>
+      <textarea class="promoteIn" placeholder="Input your paper in there" v-model="prompt"></textarea>
       <button class="runI" @click="run">启动</button>
     </div>
     <div class="bottomMain">
       <div class="outputS">
         <div class="config">
+          <div class="iTxtIn">
+            <a class="a-upload">
+              <input type="file" @change="uploadTextFile($event)" accept=".txt">&nbsp; 请在这里提交你的txt文件
+            </a>
+            <pre v-show="textFileFlag">{{ textContent }}</pre>
+          </div>
+          <div class="iDocIn">
+            <a class="a-upload">
+              <input type="file" @change="uploadDocFile($event)" accept=".doc, .docx">&nbsp; 请在这里提交你的doc文件
+            </a>
+            <p v-show="docFileFlag">Uploaded Word document: {{ docFileName }}</p>
+          </div>
+          <div class="iPdfIn">
+            <a class="a-upload">
+              <input type="file" @change="uploadPdfFile($event)" accept=".pdf">&nbsp; 请在这里提交你的pdf文件
+            </a>
+            <p v-show="pdfFileFlag">Uploaded PDF document: {{ pdfFileName }}</p>
+          </div>
 
-          <div class="iImgIn">
+
+
+          <!--代码逻辑没看懂，需要进一步理解-->
+<!--          <div class="iImgIn">
             <a class="a-upload">
               <input type="file" @change="uploadImage1($event)" accept="image/png" >&nbsp; Select your first frame!
             </a>
@@ -151,7 +172,7 @@ function run() {
               <input type="file" @change="uploadImage3($event)" accept="image/png" >&nbsp; Select your canny!
             </a>
             <img  :src="cannySrc"  alt="frame1" v-show="cannyFlag"/>
-          </div>
+          </div>-->
 
 
 <!--          <SelectImg></SelectImg>-->
@@ -256,13 +277,29 @@ function run() {
 .runI:hover{
   background: #e06a00;
 }
-
+/*
 .iImgIn{
   width: 95%;
   height: 29%;
   margin-bottom: 3%;
 }
-/*a  upload */
+!*a  upload *!
+*/
+.iTxtIn{
+  width: 95%;
+  height: 29%;
+  margin-bottom: 3%;
+}
+.iDocIn{
+  width: 95%;
+  height: 29%;
+  margin-bottom: 3%;
+}
+.iPdfIn{
+  width: 95%;
+  height: 29%;
+  margin-bottom: 3%;
+}
 .a-upload {
   width: 95%;
   height: 13%;
